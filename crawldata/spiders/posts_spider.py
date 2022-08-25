@@ -8,21 +8,26 @@ class PostSpider(scrapy.Spider):
     name = "posts"
 
     start_urls = []
+    
+    list = []
 
-    page = str(input("Enter page: "))
+    # page = str(input("Enter page: "))
 
     allowed_domains = ['https://stackoverflow.com/']
-    start_urls.append(
-        "https://stackoverflow.com/questions/tagged/python?tab=newest&page=" +
-        page + "&pagesize=50")
+    
+    for i in range(1,6):
+        start_urls.append(
+            "https://stackoverflow.com/questions/tagged/python?tab=newest&page=" +
+            str(i) + "&pagesize=50")
+   
 
     def parse(self, response):
 
-        # def formatString(str):
-        #     str = re.sub("\n", " ", str)
-        #     str = str.strip()
-        #     str = re.sub(r"(?m)^[^\S\r\n]+", "", str)
-        #     return str
+        def formatString(str):
+            str = re.sub("\n", " ", str)
+            str = str.strip()
+            str = re.sub(r"(?m)^[^\S\r\n]+", "", str)
+            return str
 
         for post in response.css('div.s-post-summary'):
             content = post.css(
@@ -38,7 +43,7 @@ class PostSpider(scrapy.Spider):
                 'Title':
                 title,
                 'Content':
-                content,
+                formatString(content),
                 'Vote':
                 post.css(
                     'div.js-post-summary-stats > div:nth-child(1) > span.s-post-summary--stats-item-number::text'
