@@ -5,11 +5,14 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh """
-                    python --version
-                    docker build -t mycrawler .
-                    docker compose up
-                """ 
+                sh "python --version"
+                sh "docker build -t mycrawler ."
+                sh "docker compose up"
+            }
+        }
+        stage('Test') {
+            steps {
+                sh "scrapy crawl posts -o posts.json"
             }
         }
     }
