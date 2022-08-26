@@ -4,8 +4,7 @@ services:
   crawler:
     build: .
     container_name: scrapy-app
-    image: mycrawler:latest
-    restart: always
+    image: thinh28042001/mycrawler:latest
     networks:
       - mynet
 
