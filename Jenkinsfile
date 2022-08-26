@@ -1,12 +1,12 @@
 pipeline {
     agent {
-        docker {image 'thinh28042001/mycrawler:latest'}
+        docker { dockerfile true }
     } 
-    
+
     stages {
         stage('Build') { 
             steps {
-                sh "python crawl.py"
+                sh "python --version"
             }
         }
     }
