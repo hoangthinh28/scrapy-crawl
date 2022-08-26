@@ -1,7 +1,5 @@
 pipeline {
-    // agent {
-    //     docker {image 'thinh28042001/mycrawler'}
-    // } 
+    agent none
     stages {
         stage('Build') { 
             steps {
