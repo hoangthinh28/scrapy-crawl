@@ -1,12 +1,8 @@
 pipeline { 
-    agent { dockerfile true }
+    agent any
 
     stages {
-        stage('Build') { 
-            agent {
-                docker {image 'thinh28042001/mycrawler:latest'}
-                reuseNode true
-            }            
+        stage('Build') {             
             steps {
                 sh "python --version"
                 sh "docker build -t mycrawler ."
