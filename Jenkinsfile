@@ -1,23 +1,15 @@
 pipeline {
-    agent none
+    agent { docker { image 'python:3.7.2' } }
 
     stages {
         stage('Build') {
-            agent {
-                docker {
-                    image 'python:2-alpine'
-                }
-            }
-
             steps {
-                sh "python --version"
-                sh "pip3 install --no-cache-dir -r requirements.txt"
-                sh "python crawl.py"
+                sh 'pip install -r requirements.txt'
             }
         }
         stage('Test') {
             steps {
-                sh "scrapy crawl posts -o posts.json"
+                sh "python crawl.py"
             }
         }
     }
