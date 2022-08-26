@@ -1,8 +1,12 @@
-pipeline { 
+pipeline {
+    
     agent any
 
     stages {
-        stage('Build') {             
+        stage('Build') {
+             agent {
+                docker {image 'python:3'}
+            }
             steps {
                 sh "python --version"
                 sh "docker build -t mycrawler ."
