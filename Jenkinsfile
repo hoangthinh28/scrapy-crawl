@@ -1,22 +1,12 @@
 pipeline {
-    agent any 
+    agent {
+        docker { image 'python:3' }
+    } 
     stages {
         stage('Build') { 
             steps {
-                sh 'pip install -r requirements.txt' 
+                sh 'python --version' 
             }
         }
-        stage('Test') { 
-            steps {
-                sh 'python crawl.py' 
-            }
-        }
-
-        stage('Deploy-To-Staging') { 
-            steps {
-                sh 'echo "Deploying to staging "'
-            }
-        }
-
     }
 }
