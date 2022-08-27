@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("Clone stage") {
             steps{
-                sh "docker pull python:latest"
+                sh "sudo apt update"
             }
         }
     }
