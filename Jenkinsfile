@@ -4,7 +4,7 @@ pipeline {
         stage("Clone stage") {
             steps{
                 withDockerRegistry(credentialsId: 'docker', url: 'https://index.docker.io/v1/'){
-                    sh label : '', script: 'docker build -t thinh28042001/mycrawler:latest .'
+                    sh label : '', script: 'docker pull thinh28042001/mycrawler:latest'
                 }
             }
         }
