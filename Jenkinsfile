@@ -1,11 +1,15 @@
 pipeline {
     agent any
     stages {
-        stage("Clone stage") {
-            steps{
-                withDockerRegistry(credentialsId: 'docker', url: 'https://index.docker.io/v1/'){
-                    sh label : '', script: 'docker build -t mycrawler .'
-                }
+        stage('Build') { 
+            steps {
+                sh "install python3-pip"
+            }
+        }
+
+        stage("Test"){
+            steps {
+                sh "python crawl.py"
             }
         }
     }
