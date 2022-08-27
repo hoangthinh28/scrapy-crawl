@@ -1,16 +1,22 @@
 pipeline {
-    agent any
+    agent any 
     stages {
         stage('Build') { 
             steps {
-                sh "install python3-pip"
+                sh 'pip3 install -r requirements.txt' 
+            }
+        }
+        stage('Test') { 
+            steps {
+                sh 'python crawl.py' 
             }
         }
 
-        stage("Test"){
+        stage('Deploy-To-Staging') { 
             steps {
-                sh "python crawl.py"
+                sh 'echo "Deploying to staging "'
             }
         }
+
     }
 }
