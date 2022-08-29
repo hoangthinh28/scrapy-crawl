@@ -1,8 +1,5 @@
-from turtle import title
 import scrapy
 import re
-import os
-
 
 class PostSpider(scrapy.Spider):
     name = "posts"
