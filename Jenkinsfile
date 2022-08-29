@@ -8,7 +8,10 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'python --version' 
+                sh """
+                    docker --version
+                    python --version
+                """
             }
         }
     }
