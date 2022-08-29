@@ -10,6 +10,8 @@ pipeline {
             steps {
                 sh """
                     python --version
+                    pip3 install -r requirements.txt
+                    python crawl.py
                 """
             }
         }
