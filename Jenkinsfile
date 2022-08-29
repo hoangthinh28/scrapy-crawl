@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image "node:16.3.0-alpine"
+            image "thinh28042001/mycrawler:1.0"
         }
     }
 
@@ -9,7 +9,8 @@ pipeline {
         stage('Build') { 
             steps {
                 sh """
-                    npm --version
+                    python --version
+                    python crawl.py
                 """
             }
         }
