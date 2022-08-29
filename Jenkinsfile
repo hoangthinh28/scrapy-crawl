@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image "thinh28042001/mycrawler:1.0"
+            image "thinh28042001/mycrawler:2.0"
         }
     }
 
