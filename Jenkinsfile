@@ -17,7 +17,7 @@ pipeline {
         stage('Test') { 
             steps {
                 sh """
-                    scrapy crawl posts -o posts.xlsx
+                    scrapy crawl posts -o posts.json
                 """
             }
         }
