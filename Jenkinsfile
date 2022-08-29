@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image "nodejs:18"
+            image "node:16.3.0-alpine"
         }
     }
 
