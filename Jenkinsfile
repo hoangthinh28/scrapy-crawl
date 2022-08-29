@@ -22,5 +22,16 @@ pipeline {
                 sh "pip3 install --no-cache-dir -r requirements.txt"
             }
         }
+        stage('Build') {
+            steps {
+                sh "python crawl.py"
+            }
+        }
+    }
+
+    post {
+        success {
+            archiveArtifacts artifacts: 'scrapy/*.csv'
+        }
     }
 }
