@@ -1,10 +1,14 @@
 pipeline {
-    agent any
+    agent {
+        docker {image "thinh28042001/mycrawler:latest"}
+    }
 
     stages {
-        stage('install') { 
+        stage('Build') { 
             steps {
-                sh "apt install python3 -y"
+                sh """
+                    python crawl.py
+                """
             }
         }
     }
