@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh """
                     python --version
-                    pip install --no-cache-dir -r requirements.txt --user
+                    pip install Scrapy
                     python crawl.py
                 """
             }
