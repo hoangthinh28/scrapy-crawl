@@ -5,7 +5,7 @@ pipeline {
         stage('Build') { 
             steps {
                 sh """
-                    cd crawldata
+                    ls
                     python crawl.py
                 """
             }
