@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image "python:3.10.0-alpine"
+            image "thinh28042001/mycrawler:latest"
         }
     }
 
@@ -10,7 +10,6 @@ pipeline {
             steps {
                 sh """
                     python --version
-                    pip install Scrapy
                     python crawl.py
                 """
             }
