@@ -2,12 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') { 
+        stage('install') { 
             steps {
-                sh """
-                    ls
-                    python crawl.py
-                """
+                sh "sudo apt update"
+                sh "sudo apt install python3"
+                sh "python --version"
             }
         }
     }
