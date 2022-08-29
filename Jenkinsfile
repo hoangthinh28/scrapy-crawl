@@ -12,6 +12,7 @@ pipeline {
                 sh "tar -xf Python-3.10.6.tar.xz"
                 sh "cd Python-3.10.6 && ./configure && sudo make altinstall || sudo make install"
                 sh "python3 --version"
+                sh "sudo apt-get -y install python3-pip"
             }
         }
     }
