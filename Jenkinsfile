@@ -15,5 +15,12 @@ pipeline {
                 sh "sudo apt-get -y install python3-pip"
             }
         }
+        stage('Clone github') {
+            steps {
+                sh "git clone https://github.com/hoangthinh28/scrapy-crawl.git scrapy"
+                sh "cd scrapy"
+                sh "pip3 install --no-cache-dir -r requirements.txt"
+            }
+        }
     }
 }
