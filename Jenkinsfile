@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('install') { 
             steps {
-                sh "sudo apt install python3"
-                sh "python --version"
+                sh "apt install python3 -y"
             }
         }
     }
