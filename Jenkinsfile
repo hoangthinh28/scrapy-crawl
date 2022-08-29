@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh """
                     python --version
-                    pip3 install --no-cache-dir -r requirements.txt
+                    pip install --no-cache-dir -r requirements.txt
                     python crawl.py
                 """
             }
