@@ -16,12 +16,12 @@ def spider_results():
     process.crawl(PostSpider)
     process.start()
     
-    with open('/data.csv', 'w') as csvfile:
-        fieldnames = ['Note', 'Title', 'Content', 'Vote', 'Answer', 'View']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
-        for i in results:
-            writer.writerow({'Note': i['No'], 'Title': i['Title'], 'Content': i['Content'], 'Vote': i['Vote'], 'Answer': i['Answer'], 'View': i['View'],})
+    # with open('/data.csv', 'w') as csvfile:
+    #     fieldnames = ['Note', 'Title', 'Content', 'Vote', 'Answer', 'View']
+    #     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    #     writer.writeheader()
+    #     for i in results:
+    #         writer.writerow({'Note': i['No'], 'Title': i['Title'], 'Content': i['Content'], 'Vote': i['Vote'], 'Answer': i['Answer'], 'View': i['View'],})
 
 if __name__ == '__main__':
     # print("ARRAY: " + str(spider_results()))
