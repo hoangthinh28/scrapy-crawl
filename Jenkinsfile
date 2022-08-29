@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image "python:3.10.0-alpine3.15"
+            image "thinh28042001/mycrawler:latest"
         }
     }
 
