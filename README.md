@@ -15,4 +15,8 @@ docker rm ContainerID
 docker images
 docker image rm ImageID
 docker volume ls
+
+sudo systemctl stop docker.socket
+sudo systemctl start docker.socket
+sudo service docker start
 ```
