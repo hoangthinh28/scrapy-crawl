@@ -1,3 +1,5 @@
+<h3>Learn the first Devops and practice Docker, Jenkins, Aws</h3>
+
 ```shell
 pip install scrapy
 scrapy startproject crawldata
@@ -15,6 +17,8 @@ docker rm ContainerID
 docker images
 docker image rm ImageID
 docker volume ls
+
+dokcer-compose up
 
 sudo systemctl stop docker.socket
 sudo systemctl start docker.socket

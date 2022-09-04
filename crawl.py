@@ -16,7 +16,7 @@ def spider_results():
     process.crawl(PostSpider)
     process.start()
     
-    # with open('/data.csv', 'w') as csvfile:
+    # with open('data.csv', 'w') as csvfile:
     #     fieldnames = ['Note', 'Title', 'Content', 'Vote', 'Answer', 'View']
     #     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     #     writer.writeheader()
