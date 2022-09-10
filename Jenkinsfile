@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('Install') { 
             steps {
-                sh "sudo dpkg --configure -a"
                 sh "sudo apt-get -y upgrade"
                 sh "sudo apt-get -y install build-essential zlib1g-dev \
                     libncurses5-dev libgdbm-dev libnss3-dev \
