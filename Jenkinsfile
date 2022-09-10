@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Install') { 
             steps {
-                sh "sudo apt-get update"
+                sh "sudo apt update"
                 sh "sudo apt-get -y install build-essential zlib1g-dev \
                     libncurses5-dev libgdbm-dev libnss3-dev \
                     libssl-dev libreadline-dev libffi-dev curl"
